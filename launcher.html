@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APB-RE LAUNCHER</title>
+    <style>
+        /* Basic styles for patch notes window */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+        }
+
+        .patch-note-window {
+            width: 500px;
+            max-height: 600px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: none; /* Initially hidden */
+            z-index: 9999;
+        }
+
+        .patch-note-header {
+            padding: 15px;
+            background-color: #444;
+            border-bottom: 2px solid #555;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .patch-note-content {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .patch-note-content ul {
+            padding-left: 20px;
+        }
+
+        .patch-note-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .launcher-button {
+            margin: 50px;
+            padding: 15px 30px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .launcher-button:hover {
+            background-color: #005f7a;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="launcher-button" onclick="openPatchNotes()">View Patch Notes</button>
+
+    <div class="patch-note-window" id="patchNoteWindow">
+        <div class="patch-note-header">
+            Patch Notes - Version 1.1.0
+            <button class="close-button" onclick="closePatchNotes()">&times;</button>
+        </div>
+        <div class="patch-note-content">
+            <h3>New Features</h3>
+            <ul>
+                <li>Introduced daily challenges with rewards.</li>
+                <li>Improved game performance and reduced loading times.</li>
+            </ul>
+            <h3>Bug Fixes</h3>
+            <ul>
+                <li>Fixed a bug where the game would freeze on the loading screen.</li>
+                <li>Resolved an issue with inventory not saving properly.</li>
+                <li>Corrected UI elements overlapping in some screen resolutions.</li>
+            </ul>
+            <h3>Balancing Updates</h3>
+            <ul>
+                <li>Adjusted difficulty levels for early stages of the game.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to open the patch notes window
+        function openPatchNotes() {
+            document.getElementById('patchNoteWindow').style.display = 'block';
+        }
+
+        // Function to close the patch notes window
+        function closePatchNotes() {
+            document.getElementById('patchNoteWindow').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
